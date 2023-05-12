@@ -1,0 +1,3 @@
+[submodule "pb-frontend"]
+	path = pb-frontend
+	url = git@github.com:paddy-pyker/pb-frontend.git
