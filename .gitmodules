@@ -1,3 +1,4 @@
 [submodule "pb-frontend"]
 	path = pb-frontend
 	url = https://github.com/paddy-pyker/pb-frontend.git
+	branch = main
