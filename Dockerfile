@@ -8,16 +8,12 @@ RUN yarn
 
 COPY . .
 
-RUN git submodule init
-
-RUN git submodule update
+RUN git submodule init && git submodule update
 
 WORKDIR pb-frontend
 
-RUN yarn
-
-RUN yarn build
+RUN yarn && yarn build
 
 WORKDIR /server
 
-#ENTRYPOINT ["yarn", "start"]
+ENTRYPOINT ["yarn", "start"]
