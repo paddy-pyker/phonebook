@@ -24,9 +24,9 @@ ARG BUILD_CONFIGURATION=production
 
 ENV NG_BUILD_CONFIGURATION=$BUILD_CONFIGURATION
 
-RUN yarn test
+RUN yarn && yarn test
 
-RUN yarn && yarn build
+RUN yarn build
 
 EXPOSE 80
 EXPOSE 3000
