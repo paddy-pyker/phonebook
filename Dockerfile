@@ -23,5 +23,6 @@ WORKDIR pb-frontend
 RUN yarn && yarn build
 
 EXPOSE 80
+EXPOSE 3000
 
 CMD ["/usr/bin/supervisord"]
