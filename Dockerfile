@@ -12,7 +12,7 @@ WORKDIR	/phonebook
 
 COPY package.json yarn.lock ./
 
-RUN yarn
+RUN yarn && yarn test
 
 COPY . .
 
@@ -24,7 +24,7 @@ ARG BUILD_CONFIGURATION=production
 
 ENV NG_BUILD_CONFIGURATION=$BUILD_CONFIGURATION
 
-RUN yarn && yarn test && yarn build
+RUN yarn && yarn build
 
 EXPOSE 80
 
