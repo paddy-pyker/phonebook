@@ -24,11 +24,10 @@ ARG BUILD_CONFIGURATION=production
 
 ENV NG_BUILD_CONFIGURATION=$BUILD_CONFIGURATION
 
-RUN yarn && yarn test
-
-RUN yarn build
+RUN yarn && yarn test && yarn build
 
 EXPOSE 80
+
 EXPOSE 3000
 
 CMD ["/usr/bin/supervisord"]
