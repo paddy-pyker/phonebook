@@ -1,6 +1,14 @@
 FROM node
 
-WORKDIR	/server
+RUN apt-get update && \
+    apt-get install -y nginx supervisor && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+WORKDIR	/phonebook
 
 COPY package.json yarn.lock ./
 
@@ -14,6 +22,6 @@ WORKDIR pb-frontend
 
 RUN yarn && yarn build
 
-WORKDIR /server
+EXPOSE 80
 
-ENTRYPOINT ["yarn", "start"]
+CMD ["/usr/bin/supervisord"]
