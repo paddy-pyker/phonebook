@@ -12,9 +12,11 @@ WORKDIR	/phonebook
 
 COPY package.json yarn.lock ./
 
-RUN yarn && yarn test
+RUN yarn
 
 COPY . .
+
+RUN yarn test
 
 RUN git submodule init && git submodule update --remote
 
