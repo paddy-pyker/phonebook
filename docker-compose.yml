@@ -1,0 +1,9 @@
+services:
+  phonebook:
+    build:
+      context: .
+      no_cache: true
+    restart: always
+    ports:
+    - "8080:80"
+    - "3000:3000"
