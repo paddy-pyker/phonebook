@@ -3,6 +3,8 @@ services:
     build:
       context: .
       no_cache: true
+      args:
+        - BUILD_CONFIGURATION=development
     restart: always
     ports:
     - "4200:80"

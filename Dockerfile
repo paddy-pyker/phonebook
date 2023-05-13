@@ -16,9 +16,13 @@ RUN yarn
 
 COPY . .
 
-RUN git submodule init && git submodule update
+RUN git submodule init && git submodule update --remote
 
 WORKDIR pb-frontend
+
+ARG BUILD_CONFIGURATION=production
+
+ENV NG_BUILD_CONFIGURATION=$BUILD_CONFIGURATION
 
 RUN yarn && yarn build
 
