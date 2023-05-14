@@ -24,7 +24,7 @@
 
 🎯 STEP 2
 
-    docker compose up
+    docker compose up -d
 
 <br>
 
