@@ -27,7 +27,7 @@ check out the demo **[here](https://phonebook.pyker.click)**
 
 <br>
 
-🎯 STEP 2
+🎯 STEP 3
 
     http://localhost:4200
 
