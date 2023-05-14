@@ -11,7 +11,7 @@
 # A Simple Phonebook App
 
 
-check out the demo **[here](https://phonebook.pyker.click)**
+👉🏻 check out the demo **[here](https://phonebook.pyker.click)**
 
 **How to run locally :**
 
