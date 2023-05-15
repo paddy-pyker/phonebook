@@ -11,7 +11,8 @@
 # A Simple Phonebook App
 
 
-check out the demo **[here](https://phonebook.pyker.click)**
+👉🏻 check out the demo **[here](https://phonebook.pyker.click)**
+<br>
 
 **How to run locally :**
 
@@ -23,11 +24,11 @@ check out the demo **[here](https://phonebook.pyker.click)**
 
 🎯 STEP 2
 
-    docker compose up
+    docker compose up -d
 
 <br>
 
-🎯 STEP 2
+🎯 STEP 3
 
-    http://localhost:4200
+    http://localhost:4200/
 
