@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
     port: process.env.EMAIL_PORT || testAccount.port,
     secure: process.env.EMAIL_SECURE || testAccount.secure, 
     auth: {
-      user: process.EMAIL_USER || testAccount.auth.user,
+      user: process.env.EMAIL_USER || testAccount.auth.user,
       pass: process.env.EMAIL_PASS || testAccount.auth.pass, 
     },
 });
