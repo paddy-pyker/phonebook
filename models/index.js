@@ -1,4 +1,4 @@
-const database = require('./database').database;
+const database = require('./database');
 const Auth = require('./auth')();
 const UserInfo = require('./user_info')();
 const Contact = require('./contact')();
@@ -35,5 +35,5 @@ const models = {
     Contact
 }
 
-models.export = models;
+module.exports = models;
 

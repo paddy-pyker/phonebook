@@ -1,5 +1,6 @@
-const database = require('./database').database;
+const database = require('./database');
 const {DataTypes, Model} = require('sequelize');
+
 
 module.exports = () => { 
     class Auth extends Model {}
