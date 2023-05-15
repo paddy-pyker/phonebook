@@ -23,16 +23,11 @@ Auth.hasMany(Contact, {
 );
 Contact.belongsTo(Auth, {foreignKey: 'email'});
 
-// Sync all models that aren't already in the database
-(async () => {
-    await database.sync({alter: true});
-    console.log("all tables synchonised")
-})();
-
 const models = {
     Auth,
     UserInfo,
-    Contact
+    Contact,
+    database
 }
 
 module.exports = models;
