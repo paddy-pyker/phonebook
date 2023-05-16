@@ -4,6 +4,7 @@ const cors = require('cors')
 const models = require('./models');
 const {sendOTP} = require('./helpers');
 const {Op} = require('sequelize')
+const jwt = require('jsonwebtoken');
 
 const app = express()
 app.use(cors());
@@ -54,14 +55,27 @@ app.post('/verify_otp', async(req,res) => {
 			email,
 			otp,
 			updatedAt: {
-				[Op.gt]: new Date(new Date() - 20 * 60 * 1000)
+				[Op.gt]: new Date(new Date() - 10 * 60 * 1000)
 			}
 		}})
 	
 		if(auth){
+			//send a jwt as set-cookie header
+			const payload = { email: auth.email };
+			const secretKey = process.env.JWT_SECRET || 'g0m^sh!';
+			const options = { expiresIn: '1h' };
+
+			const token = jwt.sign(payload, secretKey, options);
+
+			res.cookie('token',token,{
+				httpOnly:true,
+				sameSite:'strict'
+			})			
+
 			res.json({
 				status:'OK'
 			})
+
 		}else{
 			res.json({
 				status:'FAILED'

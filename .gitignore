@@ -10,4 +10,4 @@
 !.yarn/cache
 .editorconfig
 .pnp.*
-.db
+*.db

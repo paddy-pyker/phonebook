@@ -31,6 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cors", "npm:2.8.5"],\
             ["express", "npm:4.18.2"],\
             ["jest", "virtual:3c47830a526f224b4f3b8ee2d8c853ced68a57f204f9f2b5ef3606c7d209a608425c75bfaff6ae91ab1a11ac3ff3fac9910cd83158c95e96c2efd323a8254b67#npm:29.5.0"],\
+            ["jsonwebtoken", "npm:9.0.0"],\
             ["nodemailer", "npm:6.9.2"],\
             ["sequelize", "virtual:3c47830a526f224b4f3b8ee2d8c853ced68a57f204f9f2b5ef3606c7d209a608425c75bfaff6ae91ab1a11ac3ff3fac9910cd83158c95e96c2efd323a8254b67#npm:6.31.1"],\
             ["sqlite3", "virtual:3c47830a526f224b4f3b8ee2d8c853ced68a57f204f9f2b5ef3606c7d209a608425c75bfaff6ae91ab1a11ac3ff3fac9910cd83158c95e96c2efd323a8254b67#npm:5.1.6"],\
@@ -1825,6 +1826,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["buffer-equal-constant-time", [\
+        ["npm:1.0.1", {\
+          "packageLocation": "./.yarn/cache/buffer-equal-constant-time-npm-1.0.1-41826f3419-80bb945f5d.zip/node_modules/buffer-equal-constant-time/",\
+          "packageDependencies": [\
+            ["buffer-equal-constant-time", "npm:1.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["buffer-from", [\
         ["npm:1.1.2", {\
           "packageLocation": "./.yarn/cache/buffer-from-npm-1.1.2-03d2f20d7e-0448524a56.zip/node_modules/buffer-from/",\
@@ -2342,6 +2352,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/dottie-npm-2.0.3-8395bc1a63-4f5300f7f3.zip/node_modules/dottie/",\
           "packageDependencies": [\
             ["dottie", "npm:2.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["ecdsa-sig-formatter", [\
+        ["npm:1.0.11", {\
+          "packageLocation": "./.yarn/cache/ecdsa-sig-formatter-npm-1.0.11-b6784e7852-207f9ab1c2.zip/node_modules/ecdsa-sig-formatter/",\
+          "packageDependencies": [\
+            ["ecdsa-sig-formatter", "npm:1.0.11"],\
+            ["safe-buffer", "npm:5.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3784,6 +3804,42 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["jsonwebtoken", [\
+        ["npm:9.0.0", {\
+          "packageLocation": "./.yarn/cache/jsonwebtoken-npm-9.0.0-36fd1594c0-b9181cecf9.zip/node_modules/jsonwebtoken/",\
+          "packageDependencies": [\
+            ["jsonwebtoken", "npm:9.0.0"],\
+            ["jws", "npm:3.2.2"],\
+            ["lodash", "npm:4.17.21"],\
+            ["ms", "npm:2.1.3"],\
+            ["semver", "npm:7.5.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["jwa", [\
+        ["npm:1.4.1", {\
+          "packageLocation": "./.yarn/cache/jwa-npm-1.4.1-4f19d6572c-ff30ea7c2d.zip/node_modules/jwa/",\
+          "packageDependencies": [\
+            ["jwa", "npm:1.4.1"],\
+            ["buffer-equal-constant-time", "npm:1.0.1"],\
+            ["ecdsa-sig-formatter", "npm:1.0.11"],\
+            ["safe-buffer", "npm:5.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["jws", [\
+        ["npm:3.2.2", {\
+          "packageLocation": "./.yarn/cache/jws-npm-3.2.2-c1ae59c7af-f0213fe5b7.zip/node_modules/jws/",\
+          "packageDependencies": [\
+            ["jws", "npm:3.2.2"],\
+            ["jwa", "npm:1.4.1"],\
+            ["safe-buffer", "npm:5.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["kleur", [\
         ["npm:3.0.3", {\
           "packageLocation": "./.yarn/cache/kleur-npm-3.0.3-f6f53649a4-df82cd1e17.zip/node_modules/kleur/",\
@@ -4529,6 +4585,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cors", "npm:2.8.5"],\
             ["express", "npm:4.18.2"],\
             ["jest", "virtual:3c47830a526f224b4f3b8ee2d8c853ced68a57f204f9f2b5ef3606c7d209a608425c75bfaff6ae91ab1a11ac3ff3fac9910cd83158c95e96c2efd323a8254b67#npm:29.5.0"],\
+            ["jsonwebtoken", "npm:9.0.0"],\
             ["nodemailer", "npm:6.9.2"],\
             ["sequelize", "virtual:3c47830a526f224b4f3b8ee2d8c853ced68a57f204f9f2b5ef3606c7d209a608425c75bfaff6ae91ab1a11ac3ff3fac9910cd83158c95e96c2efd323a8254b67#npm:6.31.1"],\
             ["sqlite3", "virtual:3c47830a526f224b4f3b8ee2d8c853ced68a57f204f9f2b5ef3606c7d209a608425c75bfaff6ae91ab1a11ac3ff3fac9910cd83158c95e96c2efd323a8254b67#npm:5.1.6"],\
