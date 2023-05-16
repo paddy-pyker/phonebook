@@ -12,10 +12,6 @@ module.exports = () => {
         otp:{
             type: DataTypes.INTEGER,
             allowNull: false
-        },
-        jwt:{
-            type: DataTypes.STRING,
-            allowNull: true
         }
     }, {
         sequelize: database, 

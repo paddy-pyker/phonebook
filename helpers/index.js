@@ -53,5 +53,6 @@ module.exports = {
             html: customized_email
         });
         console.log(info);
+        return otp;
     }
 }
