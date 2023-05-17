@@ -150,11 +150,9 @@ app.get('/get_contacts', verifyToken, async(req,res) => {
 	})
 
 	//add image url to each contact
-	if(contacts.length > 0){
-		for(let i=0;i<contacts.length;i++){
-			let avatar = multiavatar(contacts[i].dataValues.name);
-			contacts[i].dataValues.avatar = "data:image/svg+xml," + encodeURIComponent(avatar);
-		}
+	for(let i=0;i<contacts.length;i++){
+		let avatar = multiavatar(contacts[i].dataValues.name);
+		contacts[i].dataValues.avatar = "data:image/svg+xml," + encodeURIComponent(avatar);
 	}
 
 	res.json({
