@@ -3,8 +3,8 @@ const {DataTypes, Model} = require('sequelize');
 
 
 module.exports = () => { 
-    class Auth extends Model {}
-    Auth.init({
+    class User extends Model {}
+    User.init({
         email: {
             type: DataTypes.STRING,
             primaryKey: true
@@ -15,7 +15,7 @@ module.exports = () => {
         }
     }, {
         sequelize: database, 
-        modelName: 'auth'
+        modelName: 'user'
     });
-    return Auth;
+    return User;
 }

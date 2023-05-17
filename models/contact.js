@@ -4,15 +4,15 @@ const {DataTypes, Model} = require('sequelize');
 module.exports = () => {
     class Contact extends Model {}
     Contact.init({
-        number: {
+        phone: {
             type: DataTypes.INTEGER,
             primaryKey: true
         },
-        email:{
+        name:{
             type: DataTypes.STRING,
             allowNull: false
         },
-        type:{
+        email: {
             type: DataTypes.STRING,
             allowNull: false
         }
