@@ -3,7 +3,7 @@ const database = require('./models').database;
 
 // Sync all models that aren't already in the database
 (async () => {
-    await database.sync({alter: true}); 
+    await database.sync(); 
     console.log("all tables synchonised")
 })();
 

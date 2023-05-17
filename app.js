@@ -149,6 +149,14 @@ app.get('/get_contacts', verifyToken, async(req,res) => {
 		where: {email}
 	})
 
+	//add image url to each contact
+	if(contacts.length > 0){
+		for(let i=0;i<contacts.length;i++){
+			let avatar = multiavatar(contacts[i].dataValues.name);
+			contacts[i].dataValues.avatar = "data:image/svg+xml," + encodeURIComponent(avatar);
+		}
+	}
+
 	res.json({
 		status:'OK',
 		contacts
@@ -165,8 +173,7 @@ app.delete('/delete_contact/:id', verifyToken, async(req,res) => {
 
 	res.json({
 		status:'OK'
-	})
-	
+	})	
 })
 
 
