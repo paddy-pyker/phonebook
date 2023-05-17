@@ -15,7 +15,6 @@ app.use(require('express').json())
 app.use(cookieParser());
 
 const User = models.User;
-const Avatar = models.Avatar;
 const Contact = models.Contact;
 
 app.get('/',(req,res) => {
@@ -88,12 +87,13 @@ app.post('/verify_otp', async(req,res) => {
 
 })
 
+//Create or Update a contact
 app.post('/add_contact', verifyToken, async(req,res) => {
 	const email = req.user.email;
 	const name = req.body['name'] || '';
 	const phone = req.body['phone'] || '';
-	let image = multiavatar(name);
-	image = "data:image/svg+xml," + encodeURIComponent(image);
+	// let image = multiavatar(name);
+	// image = "data:image/svg+xml," + encodeURIComponent(image);
 
 	const [contact, created] = await Contact.findOrCreate({
 		where: {email,phone},
@@ -106,22 +106,32 @@ app.post('/add_contact', verifyToken, async(req,res) => {
 
 	if(!created){
 		contact.name = name;
+		contact.phone = phone;
 		await contact.save();
 	}
-
-	//add the image to the avatar table
-	const [avatar, createdd] = await Avatar.findOrCreate({
-		where: {name},
-		defaults: {
-			name,
-			image
-		}
-	})
-
 	res.json({
 		status:'OK'
 	})
 })
+
+//Get all contacts
+app.get('/get_contacts', verifyToken, async(req,res) => {
+	const email = req.user.email;
+	const contacts = await Contact.findAll({
+		where: {email}
+	})
+
+	res.json({
+		status:'OK',
+		contacts
+	})
+})
+
+//Delete a contact
+// app.delete('/delete_contact/:id', verifyToken, async(req,res) => {
+// 	const email = req.user.email;
+// 	const id = req.params.id;
+
 
 
 
