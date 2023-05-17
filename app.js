@@ -87,13 +87,10 @@ app.post('/verify_otp', async(req,res) => {
 
 })
 
-//Create or Update a contact
 app.post('/add_contact', verifyToken, async(req,res) => {
 	const email = req.user.email;
 	const name = req.body['name'] || '';
 	const phone = req.body['phone'] || '';
-	// let image = multiavatar(name);
-	// image = "data:image/svg+xml," + encodeURIComponent(image);
 
 	const [contact, created] = await Contact.findOrCreate({
 		where: {email,phone},
@@ -104,15 +101,48 @@ app.post('/add_contact', verifyToken, async(req,res) => {
 		}
 	})
 
-	if(!created){
-		contact.name = name;
-		contact.phone = phone;
-		await contact.save();
-	}
 	res.json({
 		status:'OK'
 	})
 })
+
+app.patch('/update_contact', verifyToken, async(req,res) => {
+	const email = req.user.email;
+	const name = req.body['name'] || '';
+	const phone = req.body['phone'] || '';
+	const id = req.body['id'] || '';
+
+	//ignore duplicate phone numbers
+	const duplicate = await Contact.findOne({
+		where: {
+			email,
+			phone,
+			id: {
+				[Op.ne]: id
+			}
+		}
+	})
+
+	if(duplicate){
+		res.json({
+			status:'FAILED'
+		})
+		return;
+	}
+	
+	await Contact.update({
+		name,
+		phone
+	},{
+		where: {id,email}
+	})
+
+	res.json({
+		status:'OK'
+	})
+
+})
+
 
 //Get all contacts
 app.get('/get_contacts', verifyToken, async(req,res) => {
