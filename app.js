@@ -143,8 +143,6 @@ app.patch('/update_contact', verifyToken, async(req,res) => {
 
 })
 
-
-//Get all contacts
 app.get('/get_contacts', verifyToken, async(req,res) => {
 	const email = req.user.email;
 	const contacts = await Contact.findAll({
@@ -157,12 +155,19 @@ app.get('/get_contacts', verifyToken, async(req,res) => {
 	})
 })
 
-//Delete a contact
-// app.delete('/delete_contact/:id', verifyToken, async(req,res) => {
-// 	const email = req.user.email;
-// 	const id = req.params.id;
+app.delete('/delete_contact/:id', verifyToken, async(req,res) => {
+	const email = req.user.email;
+	const id = req.params.id;
 
+	await Contact.destroy({
+		where: {id,email}
+	})
 
+	res.json({
+		status:'OK'
+	})
+	
+})
 
 
 module.exports = app;
